@@ -15,7 +15,7 @@ public class Program
         bool continueStatus = true;
         Scripture scrip = new Scripture(verses);
 
-        while (continueStatus == true) 
+        while (continueStatus) 
         {
             Console.Write($"{reference}: ");
             scrip.Display();
@@ -23,10 +23,15 @@ public class Program
             Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
             userInputContinue = Console.ReadLine();
             scrip.HideWords(3);
-            scrip.IsAllHidden();
             if (userInputContinue == "quit")
             {
                 continueStatus = false;
+            }
+            else if (scrip.IsAllHidden())
+            {
+                continueStatus = false;
+                scrip.Display();
+                Console.WriteLine();
             }
             else
             {

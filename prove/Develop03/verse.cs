@@ -30,13 +30,22 @@ class Verse
     }
     public void Hide(int count)
     {
+        Word word = new Word("");
+
         for (int i = 0; i < count; i++)
         {
             
             Random randomGenerator = new Random();
             int randomIndex = randomGenerator.Next(0, _words.Count);
-
-            _words[randomIndex].hide();
+            if (_words[randomIndex].IsHidden() == false)
+            {
+                _words[randomIndex].hide();
+            }
+            else
+            {
+                if (IsAllHidden() != true)
+                    i -= 1;
+            }
         }
     }
 

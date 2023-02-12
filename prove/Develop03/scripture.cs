@@ -41,11 +41,16 @@ class Scripture
 
     public bool IsAllHidden()
     {
+        bool allHidden = true;
         foreach (Verse verse in _verses)
         {
-            verse.IsAllHidden();
+           if (!verse.IsAllHidden())
+           {
+            allHidden = false;
+           }
         }
         // TODO ask all verses if thay are hidden
-        return false;
+        
+        return allHidden;
     }
 }
