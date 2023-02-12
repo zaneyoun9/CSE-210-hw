@@ -6,7 +6,7 @@ public class Journal_Entry
         {
             Console.WriteLine("you are using journal");
             Console.WriteLine(i);
-            string _file = " ";
+            //string _file = " ";
             List<string> _entries;
             _entries = new List<string>();
             List<string> _promptList;
