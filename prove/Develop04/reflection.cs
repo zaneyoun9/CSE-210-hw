@@ -6,6 +6,7 @@ public class Reflection : Activity
 
     private List<string> _promptList = new List<string>();
     
+    
     private void GenerateRandomIndex()
     {
         Random _randomGenerator = new Random();
